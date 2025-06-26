@@ -73,7 +73,7 @@ index_html = """
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>MovieZone - Your Entertainment Hub</title>
+<title>MovieZoneBD - Your Entertainment Hub</title>
 <style>
   /* Reset & basics */
   * {
@@ -419,7 +419,7 @@ index_html = """
 </head>
 <body>
 <header>
-  <h1>MovieZone</h1>
+  <h1>MovieZoneBD</h1>
   <form method="GET" action="/">
     <input type="search" name="q" placeholder="Search movies..." value="{{ query|default('') }}" />
   </form>
@@ -428,7 +428,7 @@ index_html = """
   {# Conditional rendering for full list pages vs. homepage sections #}
   {% if is_full_page_list %}
     <div class="category-header">
-      <h2>{{ query }}</h2> {# query holds the title like "Trending on MovieZone" #}
+      <h2>{{ query }}</h2> {# query holds the title like "Trending on MovieZoneBD" #}
       {# No "See All" button for full list pages #}
     </div>
     {% if movies|length == 0 %}
@@ -510,7 +510,7 @@ index_html = """
       {% endif %}
     {% else %}
       <div class="category-header">
-        <h2>Trending on MovieZone</h2>
+        <h2>Trending on MovieZoneBD</h2>
         <a href="{{ url_for('trending_movies') }}" class="see-all-btn">See All</a>
       </div>
       {% if trending_movies|length == 0 %}
@@ -1015,7 +1015,7 @@ detail_html = """
 <body>
 <header>
   <a href="{{ url_for('home') }}" class="back-button"><i class="fas fa-arrow-left"></i>Back</a>
-  <h1>MovieZone</h1>
+  <h1>MovieZoneBD</h1>
 </header>
 <main>
   {% if movie %}
@@ -1100,7 +1100,7 @@ detail_html = """
     <i class="fas fa-film"></i>
     <span>Movie</span>
   </a>
-  <a href="https://t.me/Movie_Request_Group_23" class="nav-item" target="_blank" rel="noopener">
+  <a href="https://t.me/MovieChannel_Chat" class="nav-item" target="_blank" rel="noopener">
     <i class="fas fa-plus-circle"></i>
     <span>Request</span>
   </a>
@@ -1124,7 +1124,7 @@ admin_html = """
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin Panel - MovieZone</title>
+  <title>Admin Panel - MovieZoneBD</title>
   <style>
     body { font-family: Arial, sans-serif; background: #121212; color: #eee; padding: 20px; }
     h2 { 
@@ -2207,9 +2207,9 @@ def delete_movie(movie_id):
         # Delete the movie from MongoDB using its ObjectId
         result = movies.delete_one({"_id": ObjectId(movie_id)})
         if result.deleted_count == 1:
-            print(f"Content with ID {movie_id} deleted successfully from MovieZone!")
+            print(f"Content with ID {movie_id} deleted successfully from MovieZoneBD!")
         else:
-            print(f"Content with ID {movie_id} not found in MovieZone database.")
+            print(f"Content with ID {movie_id} not found in MovieZoneBD database.")
     except Exception as e:
         print(f"Error deleting content with ID {movie_id}: {e}")
     
@@ -2223,7 +2223,7 @@ def trending_movies():
     for m in trending_list:
         m['_id'] = str(m['_id'])
     # Pass is_full_page_list=True and use 'movies' for the list
-    return render_template_string(index_html, movies=trending_list, query="Trending on MovieZone", is_full_page_list=True)
+    return render_template_string(index_html, movies=trending_list, query="Trending on MovieZoneBD", is_full_page_list=True)
 
 @app.route('/movies_only')
 def movies_only():
@@ -2231,7 +2231,7 @@ def movies_only():
     for m in movie_list:
         m['_id'] = str(m['_id'])
     # Pass is_full_page_list=True and use 'movies' for the list
-    return render_template_string(index_html, movies=movie_list, query="All Movies on MovieZone", is_full_page_list=True)
+    return render_template_string(index_html, movies=movie_list, query="All Movies on MovieZoneBD", is_full_page_list=True)
 
 @app.route('/webseries')
 def webseries():
@@ -2239,7 +2239,7 @@ def webseries():
     for m in series_list:
         m['_id'] = str(m['_id'])
     # Pass is_full_page_list=True and use 'movies' for the list
-    return render_template_string(index_html, movies=series_list, query="All Web Series on MovieZone", is_full_page_list=True)
+    return render_template_string(index_html, movies=series_list, query="All Web Series on MovieZoneBD", is_full_page_list=True)
 
 @app.route('/coming_soon')
 def coming_soon():
@@ -2255,7 +2255,7 @@ def recently_added_all():
     all_recent_content = list(movies.find().sort('_id', -1))
     for m in all_recent_content:
         m['_id'] = str(m['_id'])
-    return render_template_string(index_html, movies=all_recent_content, query="Recently Added to MovieZone", is_full_page_list=True)
+    return render_template_string(index_html, movies=all_recent_content, query="Recently Added to MovieZoneBD", is_full_page_list=True)
 
 
 if __name__ == "__main__":
