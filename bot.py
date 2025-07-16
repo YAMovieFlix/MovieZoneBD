@@ -2214,14 +2214,6 @@ def edit_movie(movie_id):
                 episode_link_480ps = request.form.getlist('episode_link_480p[]')
                 episode_link_720ps = request.form.getlist('episode_link_720p[]')
                 episode_link_1080ps = request.form.getlist('episode_link_1080p[]')
-                
-                 episode_link_480ps = request.form.getlist('episode_link_480p[]')
-                episode_link_720ps = request.form.getlist('episode_link_720p[]')
-                episode_link_1080ps = request.form.getlist('episode_link_1080p[]')
-                
-                 episode_link_480ps = request.form.getlist('episode_link_480p[]')
-                episode_link_720ps = request.form.getlist('episode_link_720p[]')
-                episode_link_1080ps = request.form.getlist('episode_link_1080p[]')
 
                 for i in range(len(episode_numbers)):
                     episode_links = []
