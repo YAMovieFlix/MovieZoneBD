@@ -1616,6 +1616,38 @@ edit_html = """
         </div>
     </div>
 
+<div class="form-group" id="movie_download_links_group"> {# Group for movie links #}
+        <label>Download Links (only paste URL):</label>
+        <div class="link-input-group">
+            <p>480p TeraBox Link [Approx. 590MB]:</p>
+            <input type="url" name="link_480p" placeholder="Enter 480p download link" value="{% for link in movie.links %}{% if link.quality == '480p' %}{{ link.url }}{% endif %}{% endfor %}" />
+        </div>
+        <div class="link-input-group">
+            <p>720p TeraBox Link [Approx. 1.4GB]:</p>
+            <input type="url" name="link_720p" placeholder="Enter 720p download link" value="{% for link in movie.links %}{% if link.quality == '720p' %}{{ link.url }}{% endif %}{% endfor %}" />
+        </div>
+        <div class="link-input-group">
+            <p>1080p TeraBox Link [Approx. 2.9GB]:</p>
+            <input type="url" name="link_1080p" placeholder="Enter 1080p download link" value="{% for link in movie.links %}{% if link.quality == '1080p' %}{{ link.url }}{% endif %}{% endfor %}" />
+        </div>
+    </div>
+
+    <div class="form-group" id="movie_download_links_group"> {# Group for movie links #}
+        <label>Download Links (only paste URL):</label>
+        <div class="link-input-group">
+            <p>480p Telegram Fie [Approx. 590MB]:</p>
+            <input type="url" name="link_480p" placeholder="Enter 480p download link" value="{% for link in movie.links %}{% if link.quality == '480p' %}{{ link.url }}{% endif %}{% endfor %}" />
+        </div>
+        <div class="link-input-group">
+            <p>720p Telegram Fie [Approx. 1.4GB]:</p>
+            <input type="url" name="link_720p" placeholder="Enter 720p download link" value="{% for link in movie.links %}{% if link.quality == '720p' %}{{ link.url }}{% endif %}{% endfor %}" />
+        </div>
+        <div class="link-input-group">
+            <p>1080p Telegram Fie [Approx. 2.9GB]:</p>
+            <input type="url" name="link_1080p" placeholder="Enter 1080p download link" value="{% for link in movie.links %}{% if link.quality == '1080p' %}{{ link.url }}{% endif %}{% endfor %}" />
+        </div>
+    </div>
+
     <div id="episode_fields" style="display: none;"> {# Initially hidden for series episodes #}
         <h3>Episodes</h3>
         <div id="episodes_container">
