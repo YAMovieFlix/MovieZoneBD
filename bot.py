@@ -1617,7 +1617,7 @@ edit_html = """
     </div>
 
 <div class="form-group" id="movie_download_links_group"> {# Group for movie links #}
-        <label>Download Links (only paste URL):</label>
+        <label>TeraBox Links (only paste URL):</label>
         <div class="link-input-group">
             <p>480p TeraBox Link [Approx. 590MB]:</p>
             <input type="url" name="link_480p" placeholder="Enter 480p download link" value="{% for link in movie.links %}{% if link.quality == '480p' %}{{ link.url }}{% endif %}{% endfor %}" />
@@ -1633,7 +1633,7 @@ edit_html = """
     </div>
 
     <div class="form-group" id="movie_download_links_group"> {# Group for movie links #}
-        <label>Download Links (only paste URL):</label>
+        <label>Telegram Fie (only paste URL):</label>
         <div class="link-input-group">
             <p>480p Telegram Fie [Approx. 590MB]:</p>
             <input type="url" name="link_480p" placeholder="Enter 480p download link" value="{% for link in movie.links %}{% if link.quality == '480p' %}{{ link.url }}{% endif %}{% endfor %}" />
