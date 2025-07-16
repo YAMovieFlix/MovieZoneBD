@@ -1029,6 +1029,7 @@ detail_html = """
                 No Image
               </div>
             {% endif %}
+            
             {% if movie.is_coming_soon %}
                 <div class="coming-soon-badge">COMING SOON</div>
             {% elif movie.quality %}
@@ -1058,6 +1059,62 @@ detail_html = """
             </div>
           </div>
           {% endfor %}
+        {% else %}
+          <p class="no-link-message">No download links available yet.</p>
+        {% endif %}
+      {% elif movie.type == 'series' and movie.episodes and movie.episodes|length > 0 %}
+        <h3>Episodes</h3>
+        {% for episode in movie.episodes | sort(attribute='episode_number') %}
+        <div class="download-item" style="border-top: 1px solid #333; padding-top: 15px; margin-top: 15px;">
+          <h4 style="color: #1db954; font-size: 20px; margin-bottom: 10px;">Episode {{ episode.episode_number }}: {{ episode.title }}</h4>
+          {% if episode.overview %}
+            <p style="color: #ccc; font-size: 15px; margin-bottom: 10px;">{{ episode.overview }}</p>
+          {% endif %}
+          {% if episode.links and episode.links|length > 0 %}
+            {% for link_item in episode.links %}
+            <div class="download-button-wrapper" style="margin-bottom: 10px;">
+              <a class="download-button" href="{{ link_item.url }}" target="_blank" rel="noopener">Download ({{ link_item.quality }}) [{{ link_item.size }}]</a>
+            </div>
+            {% endfor %}
+          {% else %}
+            <p class="no-link-message" style="margin-top: 0; padding: 0; background: none;">No download links for this episode.</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      {% else %}
+        <p class="no-link-message">No download links or episodes available yet for this content type.</p>
+      {% endif %}
+    </div>
+
+    {% endfor %}
+        {% else %}
+          <p class="no-link-message">No download links available yet.</p>
+        {% endif %}
+      {% elif movie.type == 'series' and movie.episodes and movie.episodes|length > 0 %}
+        <h3>Episodes</h3>
+        {% for episode in movie.episodes | sort(attribute='episode_number') %}
+        <div class="download-item" style="border-top: 1px solid #333; padding-top: 15px; margin-top: 15px;">
+          <h4 style="color: #1db954; font-size: 20px; margin-bottom: 10px;">Episode {{ episode.episode_number }}: {{ episode.title }}</h4>
+          {% if episode.overview %}
+            <p style="color: #ccc; font-size: 15px; margin-bottom: 10px;">{{ episode.overview }}</p>
+          {% endif %}
+          {% if episode.links and episode.links|length > 0 %}
+            {% for link_item in episode.links %}
+            <div class="download-button-wrapper" style="margin-bottom: 10px;">
+              <a class="download-button" href="{{ link_item.url }}" target="_blank" rel="noopener">Download ({{ link_item.quality }}) [{{ link_item.size }}]</a>
+            </div>
+            {% endfor %}
+          {% else %}
+            <p class="no-link-message" style="margin-top: 0; padding: 0; background: none;">No download links for this episode.</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      {% else %}
+        <p class="no-link-message">No download links or episodes available yet for this content type.</p>
+      {% endif %}
+    </div>
+
+{% endfor %}
         {% else %}
           <p class="no-link-message">No download links available yet.</p>
         {% endif %}
