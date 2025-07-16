@@ -1061,7 +1061,7 @@ detail_html = """
           <p class="no-link-message">No download links available yet.</p>
         {% endif %}
       {% elif movie.type == 'series' and movie.episodes and movie.episodes|length > 0 %}
-        <h3>Episodes</h3>
+        <h3>Download</h3>
         {% for episode in movie.episodes | sort(attribute='episode_number') %}
         <div class="download-item" style="border-top: 1px solid #333; padding-top: 15px; margin-top: 15px;">
           <h4 style="color: #1db954; font-size: 20px; margin-bottom: 10px;">Episode {{ episode.episode_number }}: {{ episode.title }}</h4>
@@ -1097,6 +1097,7 @@ detail_html = """
           <p class="no-link-message">No download links available yet.</p>
         {% endif %}
       {% elif movie.type == 'series' and movie.episodes and movie.episodes|length > 0 %}
+      </div>
         <h3>TeraBox Link</h3>
         {% for episode in movie.episodes | sort(attribute='episode_number') %}
         <div class="download-item" style="border-top: 1px solid #333; padding-top: 15px; margin-top: 15px;">
@@ -1133,6 +1134,7 @@ detail_html = """
           <p class="no-link-message">No download links available yet.</p>
         {% endif %}
       {% elif movie.type == 'series' and movie.episodes and movie.episodes|length > 0 %}
+      </div>
         <h3>Telegram Link</h3>
         {% for episode in movie.episodes | sort(attribute='episode_number') %}
         <div class="download-item" style="border-top: 1px solid #333; padding-top: 15px; margin-top: 15px;">
