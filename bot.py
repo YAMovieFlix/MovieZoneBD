@@ -1493,63 +1493,6 @@ admin_html = """
 
     // Call on page load to set initial state
     document.addEventListener('DOMContentLoaded', toggleEpisodeFields);
-    
-    </div>
-
-</div>
-            <div class="link-input-group">
-                <p>480p Link:</p>
-                <input type="url" name="episode_link_480p[]" value="${link480p}" placeholder="Enter 480p download link" />
-            </div>
-            <div class="link-input-group">
-                <p>720p Link:</p>
-                <input type="url" name="episode_link_720p[]" value="${link720p}" placeholder="Enter 720p download link" />
-            </div>
-            <div class="link-input-group">
-                <p>1080p Link:</p>
-                <input type="url" name="episode_link_1080p[]" value="${link1080p}" placeholder="Enter 1080p download link" />
-            </div>
-            <button type="button" onclick="removeEpisode(this)" class="delete-btn" style="background: #e44d26;">Remove Episode</button>
-        `;
-        container.appendChild(newEpisodeDiv);
-    }
-
-    function removeEpisode(button) {
-        button.closest('.episode-item').remove();
-    }
-
-    // Call on page load to set initial state
-    document.addEventListener('DOMContentLoaded', toggleEpisodeFields);
-    
-    </div>
-
-    </div>
-            <div class="link-input-group">
-                <p>480p Link:</p>
-                <input type="url" name="episode_link_480p[]" value="${link480p}" placeholder="Enter 480p download link" />
-            </div>
-            <div class="link-input-group">
-                <p>720p Link:</p>
-                <input type="url" name="episode_link_720p[]" value="${link720p}" placeholder="Enter 720p download link" />
-            </div>
-            <div class="link-input-group">
-                <p>1080p Link:</p>
-                <input type="url" name="episode_link_1080p[]" value="${link1080p}" placeholder="Enter 1080p download link" />
-            </div>
-            <button type="button" onclick="removeEpisode(this)" class="delete-btn" style="background: #e44d26;">Remove Episode</button>
-        `;
-        container.appendChild(newEpisodeDiv);
-    }
-
-    function removeEpisode(button) {
-        button.closest('.episode-item').remove();
-    }
-
-    // Call on page load to set initial state
-    document.addEventListener('DOMContentLoaded', toggleEpisodeFields);
-    
-    </div>
-    
   </script>
 </body>
 </html>
