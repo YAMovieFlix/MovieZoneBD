@@ -2223,18 +2223,6 @@ def edit_movie(movie_id):
                         episode_links.append({"quality": "720p", "size": "1.4GB", "url": episode_link_720ps[i]})
                     if episode_link_1080ps and episode_link_1080ps[i]:
                         episode_links.append({"quality": "1080p", "size": "2.9GB", "url": episode_link_1080ps[i]})
-                        if episode_link_480ps and episode_link_480ps[i]:
-                        episode_links.append({"quality": "480p", "size": "590MB", "url": episode_link_480ps[i]})
-                    if episode_link_720ps and episode_link_720ps[i]:
-                        episode_links.append({"quality": "720p", "size": "1.4GB", "url": episode_link_720ps[i]})
-                    if episode_link_1080ps and episode_link_1080ps[i]:
-                        episode_links.append({"quality": "1080p", "size": "2.9GB", "url": episode_link_1080ps[i]})
-                        if episode_link_480ps and episode_link_480ps[i]:
-                        episode_links.append({"quality": "480p", "size": "590MB", "url": episode_link_480ps[i]})
-                    if episode_link_720ps and episode_link_720ps[i]:
-                        episode_links.append({"quality": "720p", "size": "1.4GB", "url": episode_link_720ps[i]})
-                    if episode_link_1080ps and episode_link_1080ps[i]:
-                        episode_links.append({"quality": "1080p", "size": "2.9GB", "url": episode_link_1080ps[i]})
                     
                     episodes_list.append({
                         "episode_number": int(episode_numbers[i]) if episode_numbers[i] else 0,
