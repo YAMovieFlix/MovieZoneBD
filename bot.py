@@ -1077,6 +1077,12 @@ detail_html = """
           {% else %}
             <p class="no-link-message" style="margin-top: 0; padding: 0; background: none;">No download links for this episode.</p>
           {% endif %}
+          </div>
+          {% endfor %}
+        {% else %}
+          <p class="no-link-message">No download links available yet.</p>
+        {% endif %}
+      {% elif movie.type == 'series' and movie.episodes and movie.episodes|length > 0 %}
     </div>
       {% if movie.type == 'movie' %}
         <h3>Download Links</h3>
@@ -1086,6 +1092,12 @@ detail_html = """
             <p class="download-quality-info">({{ link_item.quality }}) [{{ link_item.size }}]</p>
             <div class="download-button-wrapper">
               <a class="download-button" href="{{ link_item.url }}" target="_blank" rel="noopener">Download</a>
+              </div>
+          {% endfor %}
+        {% else %}
+          <p class="no-link-message">No download links available yet.</p>
+        {% endif %}
+      {% elif movie.type == 'series' and movie.episodes and movie.episodes|length > 0 %}
       </div>
         <h3>TeraBox Link</h3>
         {% for episode in movie.episodes | sort(attribute='episode_number') %}
@@ -1103,6 +1115,11 @@ detail_html = """
           {% else %}
             <p class="no-link-message" style="margin-top: 0; padding: 0; background: none;">No download links for this episode.</p>
           {% endif %}
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="no-link-message">No download links or episodes available yet for this content type.</p>
+      {% endif %}
     </div>
 {% if movie.type == 'movie' %}
         <h3>Download Links</h3>
@@ -1112,6 +1129,12 @@ detail_html = """
             <p class="download-quality-info">({{ link_item.quality }}) [{{ link_item.size }}]</p>
             <div class="download-button-wrapper">
               <a class="download-button" href="{{ link_item.url }}" target="_blank" rel="noopener">Download</a>
+              </div>
+          {% endfor %}
+        {% else %}
+          <p class="no-link-message">No download links available yet.</p>
+        {% endif %}
+      {% elif movie.type == 'series' and movie.episodes and movie.episodes|length > 0 %
       </div>
         <h3>Telegram Link</h3>
         {% for episode in movie.episodes | sort(attribute='episode_number') %}
