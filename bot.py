@@ -2214,10 +2214,28 @@ def edit_movie(movie_id):
                 episode_link_480ps = request.form.getlist('episode_link_480p[]')
                 episode_link_720ps = request.form.getlist('episode_link_720p[]')
                 episode_link_1080ps = request.form.getlist('episode_link_1080p[]')
+                 episode_link_480ps = request.form.getlist('episode_link_480p[]')
+                episode_link_720ps = request.form.getlist('episode_link_720p[]')
+                episode_link_1080ps = request.form.getlist('episode_link_1080p[]')
+                 episode_link_480ps = request.form.getlist('episode_link_480p[]')
+                episode_link_720ps = request.form.getlist('episode_link_720p[]')
+                episode_link_1080ps = request.form.getlist('episode_link_1080p[]')
 
                 for i in range(len(episode_numbers)):
                     episode_links = []
                     if episode_link_480ps and episode_link_480ps[i]:
+                        episode_links.append({"quality": "480p", "size": "590MB", "url": episode_link_480ps[i]})
+                    if episode_link_720ps and episode_link_720ps[i]:
+                        episode_links.append({"quality": "720p", "size": "1.4GB", "url": episode_link_720ps[i]})
+                    if episode_link_1080ps and episode_link_1080ps[i]:
+                        episode_links.append({"quality": "1080p", "size": "2.9GB", "url": episode_link_1080ps[i]})
+                        if episode_link_480ps and episode_link_480ps[i]:
+                        episode_links.append({"quality": "480p", "size": "590MB", "url": episode_link_480ps[i]})
+                    if episode_link_720ps and episode_link_720ps[i]:
+                        episode_links.append({"quality": "720p", "size": "1.4GB", "url": episode_link_720ps[i]})
+                    if episode_link_1080ps and episode_link_1080ps[i]:
+                        episode_links.append({"quality": "1080p", "size": "2.9GB", "url": episode_link_1080ps[i]})
+                        if episode_link_480ps and episode_link_480ps[i]:
                         episode_links.append({"quality": "480p", "size": "590MB", "url": episode_link_480ps[i]})
                     if episode_link_720ps and episode_link_720ps[i]:
                         episode_links.append({"quality": "720p", "size": "1.4GB", "url": episode_link_720ps[i]})
