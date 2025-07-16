@@ -1085,8 +1085,6 @@ detail_html = """
         <p class="no-link-message">No download links or episodes available yet for this content type.</p>
       {% endif %}
     </div>
-
-    div class="download-section">
       {% if movie.type == 'movie' %}
         <h3>Download Links</h3>
         {% if movie.links and movie.links|length > 0 %}
@@ -1125,7 +1123,8 @@ detail_html = """
       {% endif %}
     </div>
 
-    div class="download-section">
+
+    
       {% if movie.type == 'movie' %}
         <h3>Download Links</h3>
         {% if movie.links and movie.links|length > 0 %}
