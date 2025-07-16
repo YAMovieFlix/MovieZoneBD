@@ -1046,8 +1046,7 @@ detail_html = """
           <p class="detail-overview">{{ movie.overview }}</p>
         </div>
     </div>
-    
-    <div class="download-section">
+<div class="download-section">
       {% if movie.type == 'movie' %}
         <h3>Download Links</h3>
         {% if movie.links and movie.links|length > 0 %}
@@ -1057,7 +1056,6 @@ detail_html = """
             <div class="download-button-wrapper">
               <a class="download-button" href="{{ link_item.url }}" target="_blank" rel="noopener">Download</a>
             </div>
-          </div>
           {% endfor %}
         {% else %}
           <p class="no-link-message">No download links available yet.</p>
@@ -1094,7 +1092,6 @@ detail_html = """
             <div class="download-button-wrapper">
               <a class="download-button" href="{{ link_item.url }}" target="_blank" rel="noopener">Download</a>
             </div>
-          </div>
           {% endfor %}
         {% else %}
           <p class="no-link-message">No download links available yet.</p>
@@ -1131,7 +1128,6 @@ detail_html = """
             <div class="download-button-wrapper">
               <a class="download-button" href="{{ link_item.url }}" target="_blank" rel="noopener">Download</a>
             </div>
-          </div>
           {% endfor %}
         {% else %}
           <p class="no-link-message">No download links available yet.</p>
