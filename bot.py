@@ -1482,32 +1482,30 @@ admin_html = """
                 <p>1080p Link:</p>
                 <input type="url" name="episode_link_1080p[]" value="${link1080p}" placeholder="Enter 1080p download link" />
             </div>
-
- </div>
             <div class="link-input-group">
-                <p>480p Link:</p>
+                <p>TeraBox 480p Link:</p>
                 <input type="url" name="episode_link_480p[]" value="${link480p}" placeholder="Enter 480p TeraBox link" />
             </div>
             <div class="link-input-group">
-                <p>720p Link:</p>
+                <p>TeraBox 720p Link:</p>
                 <input type="url" name="episode_link_720p[]" value="${link720p}" placeholder="Enter 720p TeraBox link" />
             </div>
             <div class="link-input-group">
-                <p>1080p Link:</p>
+                <p>TeraBox 1080p Link:</p>
                 <input type="url" name="episode_link_1080p[]" value="${link1080p}" placeholder="Enter 1080p TeraBox link" />
             </div>
 
             /div>
             <div class="link-input-group">
-                <p>480p Link:</p>
+                <p>Telegram 480p Link:</p>
                 <input type="url" name="episode_link_480p[]" value="${link480p}" placeholder="Enter 480p Telegram File link" />
             </div>
             <div class="link-input-group">
-                <p>720p Link:</p>
+                <p>Telegram 720p Link:</p>
                 <input type="url" name="episode_link_720p[]" value="${link720p}" placeholder="Enter 720p Telegram File link" />
             </div>
             <div class="link-input-group">
-                <p>1080p Link:</p>
+                <p>Telegram 1080p Link:</p>
                 <input type="url" name="episode_link_1080p[]" value="${link1080p}" placeholder="Enter 1080p Telegram File link" />
             </div>
             
